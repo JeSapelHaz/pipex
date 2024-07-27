@@ -6,38 +6,43 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/09 16:59:31 by hbutt             #+#    #+#              #
-#    Updated: 2024/07/10 13:23:24 by hbutt            ###   ########.fr        #
+#    Updated: 2024/07/27 18:17:35 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
-SRCS = check_args.c main.c utils.c
-OBJS = ${SRCS:.c=.o}
 CC = gcc
-RM = rm -f
-LIBFT_DIR = libft
+CFLAGS = -Werror -Wall -Wextra -g
+RM = rm -rf
+
+SRCS = main.c utils.c check_args.c process.c
+LIBFT_DIR = Libft
 LIBFT = $(LIBFT_DIR)/libft.a
-CFLAGS = -Wall -Wextra -Werror -Iinclude 
+OBJS = $(SRCS:.c=.o)
 
-all: $(LIBFT) $(NAME)
+# Compilation de l'exécutable
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
+# Compilation des fichiers objets
+%.o: %.c
+	$(CC) $(CFLAGS) -I $(LIBFT_DIR) -c $< -o $@
+
+# Compilation de la bibliothèque libft
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# Règles par défaut
+all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR) clean
+	$(RM) $(OBJS)
+	$(MAKE) clean -C $(LIBFT_DIR)
 
 fclean: clean
-	rm -f $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(RM) $(NAME)
+	$(MAKE) fclean -C $(LIBFT_DIR)
 
 re: fclean all
 

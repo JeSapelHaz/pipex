@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   process.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/09 16:58:16 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/27 17:57:23 by hbutt            ###   ########.fr       */
+/*   Created: 2024/07/27 14:15:12 by hbutt             #+#    #+#             */
+/*   Updated: 2024/07/27 15:22:20 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "pipex.h"
 
-# include <fcntl.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include "Libft/libft.h"
-/* Check args */
-void	check_args(int ac);
+void exec_process();
 
-/* Utils */
-void	ft_error(char *msg);
+void parent_process();
 
-#endif
+void child_process();
