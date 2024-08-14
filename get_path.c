@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 15:45:28 by hbutt             #+#    #+#             */
-/*   Updated: 2024/08/12 17:25:06 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/08/14 12:37:26 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_getenv(char *name, char **env)
 	while (env[i])
 	{
 		name_path = ft_substr(env[i], 0, 4);
-		if (ft_strcmp(name_path, name) == 0)
+		if (ft_compare_path(name_path, name) == 0)
 		{
 			free(name_path);
 			return (env[i] + 5);

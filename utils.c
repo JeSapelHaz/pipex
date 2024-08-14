@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 17:14:40 by hbutt             #+#    #+#             */
-/*   Updated: 2024/08/13 13:31:43 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/08/14 12:37:12 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_error_2(char *msg)
 	exit(0);
 }
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_compare_path(char *s1, char *s2)
 {
 	int	i;
 
