@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 16:58:16 by hbutt             #+#    #+#             */
-/*   Updated: 2024/08/08 15:43:42 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/08/19 15:30:07 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_path(char *cmd, char **env);
 void	ft_error(char *msg);
 void	ft_error_2(char *msg);
 void	ft_free_tab(char **tab);
-int		ft_strcmp(char *s1, char *s2);
+int		ft_compare_path(char *s1, char *s2);
 int		open_file(char *file, int in_or_out);
 
 /* Process */
