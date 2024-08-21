@@ -6,13 +6,13 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/09 16:59:31 by hbutt             #+#    #+#              #
-#    Updated: 2024/08/12 17:22:41 by hbutt            ###   ########.fr        #
+#    Updated: 2024/08/21 12:46:26 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
-CC = gcc
+CC = cc
 CFLAGS = -Werror -Wall -Wextra -g
 RM = rm -rf
 
@@ -23,11 +23,11 @@ OBJS = $(SRCS:.c=.o)
 
 # Compilation de l'exécutable
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) -fsanitize=address $(OBJS) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 # Compilation des fichiers objets
-%.o: %.c
-	$(CC) $(CFLAGS) -fsanitize=address -I $(LIBFT_DIR) -c $< -o $@
+%.o: %.c Makefile
+	$(CC) $(CFLAGS) -I $(LIBFT_DIR) -c $< -o $@
 
 # Compilation de la bibliothèque libft
 $(LIBFT):

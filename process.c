@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:15:12 by hbutt             #+#    #+#             */
-/*   Updated: 2024/08/13 14:03:48 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/08/21 12:45:20 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	exec(char *cmd, char **env, int i)
 	if (execve(path, cmd_gui, env) == -1)
 	{
 		ft_free_tab(cmd_gui);
-		free(path);
 		if (i == 1)
 			ft_error_2("La commande 1 est cassée");
 		if (i == 2)
